@@ -1,0 +1,46 @@
+{
+  "bg": "https://d3q93wnyp4lkf8.cloudfront.net/revista/post_images/24443/995d25b021525fa2f7ef4183f9b89f3ba96801eb.jpg?1572044720",
+  "title": "Quiz Filosófico",
+  "description": "Vamos ver se você consegue vai conseguir acertar quem disse essas frases da filosofia!",
+  "questions": [
+    {
+      "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
+      "title": "Como fazer um seletor por id via CSS?",
+      "description": "Essa é pra aquecer",
+      "answer": 2,
+      "alternatives": [
+        ".elemento",
+        "*elemento",
+        "#elemento",
+        "%elemento"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+      "title": "Como fazer um background gradiente com css?",
+      "description": "Faz tempo em haha",
+      "answer": 0,
+      "alternatives": [
+         "background: linear-gradient(#e66465, #9198e5);",
+         "background: gradient(#e66465, #9198e5);"
+      ]
+    }
+  ],
+  "external": [
+    ""
+  ],
+  "theme": {
+    "colors": {
+      "primary": "#00251a",
+      "secondary": "#bf360c",
+      "primaryBg": "#004d40",
+      "secondaryBg":"#39796b",
+      "contrastTextPrimary": "#FFFFFF",
+      "contrastTextSecondary": "#000000",
+      "disabled": "#757575",
+      "wrong": "#FF5722",
+      "success": "#4CAF50"
+    },
+    "borderRadius": "4px"
+  }
+}
