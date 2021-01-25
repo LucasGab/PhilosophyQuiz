@@ -37,7 +37,7 @@ export default function Home() {
         </Card>
         <Footer />
       </QuizContainer>
-      <GitHubCorner projectUrl="https://github.com/omariosouto" />
+      <GitHubCorner projectUrl="https://github.com/LucasGab/PhilosophyQuiz" />
     </QuizBackground>
   ) 
 }
