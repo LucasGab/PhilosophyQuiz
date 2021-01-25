@@ -4,6 +4,7 @@ import Card from '../src/components/Card'
 import Footer from '../src/components/Footer'
 import QuizLogo from '../src/components/QuizLogo'
 import GitHubCorner from '../src/components/GitHubCorner'
+import Head from 'next/head'
 import db from '../db.json';
 
 const QuizContainer = styled.div`
@@ -15,7 +16,11 @@ const QuizContainer = styled.div`
 export default function Home() {
   return(
     <QuizBackground backgroundImage={db.bg}>
+      <Head>
+        <meta property="og:image" content={db.bg} />
+      </Head>
       <QuizContainer>
+        
         <QuizLogo />
         <Card>
           <Card.Header>
@@ -27,7 +32,6 @@ export default function Home() {
             <Card.Button disabled>Jogar</Card.Button>
           </Card.Content>
         </Card>
-
         <Card>
           <Card.Content>
             <h2>Quizes da Galera</h2>
