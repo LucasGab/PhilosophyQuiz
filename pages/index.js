@@ -1,10 +1,12 @@
-import styled from 'styled-components'
-import QuizBackground from '../src/components/QuizBackground'
-import Card from '../src/components/Card'
-import Footer from '../src/components/Footer'
-import QuizLogo from '../src/components/QuizLogo'
-import GitHubCorner from '../src/components/GitHubCorner'
-import Head from 'next/head'
+import React from 'react';
+import styled from 'styled-components';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+import QuizBackground from '../src/components/QuizBackground';
+import Card from '../src/components/Card';
+import Footer from '../src/components/Footer';
+import QuizLogo from '../src/components/QuizLogo';
+import GitHubCorner from '../src/components/GitHubCorner';
 import db from '../db.json';
 
 const QuizContainer = styled.div`
@@ -14,13 +16,33 @@ const QuizContainer = styled.div`
 `;
 
 export default function Home() {
-  return(
+  const router = useRouter();
+  const [name, setName] = React.useState('');
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    router.push(`/quiz?name=${name}`);
+  };
+
+  const validateName = (nameValidation) => {
+    let nameRes = nameValidation;
+    if (nameValidation) {
+      nameRes = nameValidation.trim();
+    }
+    return nameRes;
+  };
+
+  const nameOnChange = (event) => {
+    setName(validateName(event.target.value));
+  };
+
+  return (
     <QuizBackground backgroundImage={db.bg}>
       <Head>
+        <title>Quiz Filosófico</title>
         <meta property="og:image" content={db.bg} />
       </Head>
       <QuizContainer>
-        
         <QuizLogo />
         <Card>
           <Card.Header>
@@ -28,20 +50,28 @@ export default function Home() {
           </Card.Header>
           <Card.Content>
             <p>{db.description}</p>
-            <Card.Input placeholder="Coloque seu nome aqui"></Card.Input>
-            <Card.Button disabled>Jogar</Card.Button>
+            <form onSubmit={handleFormSubmit}>
+              <Card.Input placeholder="Coloque seu nome aqui" onChange={nameOnChange} />
+              <Card.Button type="submit" disabled={name.length === 0}>
+                Vamos Filosofar!
+              </Card.Button>
+            </form>
           </Card.Content>
         </Card>
         <Card>
           <Card.Content>
             <h2>Quizes da Galera</h2>
-
-            <p>lorem ipsum dolor sit amet...</p>
+            <Card.SubCard>
+              <p>omariosouto/aluraquiz-css</p>
+            </Card.SubCard>
+            <Card.SubCard>
+              <p>omariosouto/aluraquiz-marvel</p>
+            </Card.SubCard>
           </Card.Content>
         </Card>
         <Footer />
       </QuizContainer>
       <GitHubCorner projectUrl="https://github.com/LucasGab/PhilosophyQuiz" />
     </QuizBackground>
-  ) 
+  );
 }
