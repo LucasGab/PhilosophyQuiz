@@ -40,7 +40,20 @@ export default function Home() {
     <QuizBackground backgroundImage={db.bg}>
       <Head>
         <title>Quiz Filosófico</title>
+        <meta name="title" content="Quiz Filosófico" />
+        <meta name="description" content="Quiz Game About Philosophy things" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://philosophy-quiz.lucasgab.vercel.app/" />
+        <meta property="og:title" content="Quiz Filosófico" />
+        <meta property="og:description" content="Quiz Game About Philosophy things" />
         <meta property="og:image" content={db.bg} />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://philosophy-quiz.lucasgab.vercel.app/" />
+        <meta property="twitter:title" content="Quiz Filosófico" />
+        <meta property="twitter:description" content="Quiz Game About Philosophy things" />
+        <meta property="twitter:image" content={db.bg} />
       </Head>
       <QuizContainer>
         <QuizLogo />
