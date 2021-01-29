@@ -40,8 +40,8 @@
       "contrastTextPrimary": "#FFFFFF",
       "contrastTextSecondary": "#000000",
       "disabled": "#757575",
-      "wrong": "#FF5722",
-      "success": "#4CAF50"
+      "wrong": "#c62828",
+      "success": "#1b5e20"
     },
     "borderRadius": "4px"
   }

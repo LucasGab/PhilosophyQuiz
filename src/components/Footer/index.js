@@ -4,10 +4,11 @@ import styled from 'styled-components';
 // src/components/Footer/index.js
 const FooterWrapper = styled.footer`
   background-color: #00000070;
+  min-width: 400px;
   padding: 20px;
   display: flex;
   align-items: center;
-  border-radius: 4px; 
+  border-radius: ${({ theme }) => theme.borderRadius};
   img {
     width: 58px;
     margin-right: 23px;
@@ -23,6 +24,9 @@ const FooterWrapper = styled.footer`
     span {
       text-decoration: underline;
     }
+  }
+  @media screen and (max-width: 500px) {
+    min-width: 200px;
   }
 `;
 

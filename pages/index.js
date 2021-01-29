@@ -1,19 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
-import Head from 'next/head';
 import { useRouter } from 'next/router';
-import QuizBackground from '../src/components/QuizBackground';
 import Card from '../src/components/Card';
 import Footer from '../src/components/Footer';
 import QuizLogo from '../src/components/QuizLogo';
-import GitHubCorner from '../src/components/GitHubCorner';
+import BaseLayout from '../src/components/BaseLayout';
+import QuizContainer from '../src/components/QuizContainer';
 import db from '../db.json';
-
-const QuizContainer = styled.div`
-  width:100%;
-  max-width: 350px;
-  margin: auto 10%;
-`;
 
 export default function Home() {
   const router = useRouter();
@@ -37,24 +29,7 @@ export default function Home() {
   };
 
   return (
-    <QuizBackground backgroundImage={db.bg}>
-      <Head>
-        <title>Quiz Filosófico</title>
-        <meta name="title" content="Quiz Filosófico" />
-        <meta name="description" content="Quiz Game About Philosophy things" />
-
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://philosophy-quiz.lucasgab.vercel.app/" />
-        <meta property="og:title" content="Quiz Filosófico" />
-        <meta property="og:description" content="Quiz Game About Philosophy things" />
-        <meta property="og:image" content={db.bg} />
-
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://philosophy-quiz.lucasgab.vercel.app/" />
-        <meta property="twitter:title" content="Quiz Filosófico" />
-        <meta property="twitter:description" content="Quiz Game About Philosophy things" />
-        <meta property="twitter:image" content={db.bg} />
-      </Head>
+    <BaseLayout>
       <QuizContainer>
         <QuizLogo />
         <Card>
@@ -64,7 +39,7 @@ export default function Home() {
           <Card.Content>
             <p>{db.description}</p>
             <form onSubmit={handleFormSubmit}>
-              <Card.Input placeholder="Coloque seu nome aqui" onChange={nameOnChange} />
+              <Card.Input type="text" placeholder="Coloque seu nome aqui" onChange={nameOnChange} />
               <Card.Button type="submit" disabled={name.length === 0}>
                 Vamos Filosofar!
               </Card.Button>
@@ -84,7 +59,6 @@ export default function Home() {
         </Card>
         <Footer />
       </QuizContainer>
-      <GitHubCorner projectUrl="https://github.com/LucasGab/PhilosophyQuiz" />
-    </QuizBackground>
+    </BaseLayout>
   );
 }
