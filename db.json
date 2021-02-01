@@ -4,30 +4,125 @@
   "description": "Vamos ver se você vai conseguir acertar quem disse essas frases filosóficas!",
   "questions": [
     {
-      "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-      "title": "Como fazer um seletor por id via CSS?",
-      "description": "Essa é pra aquecer",
+      "image": "https://media.gazetadopovo.com.br/rodrigo-constantino/2019/09/abismo-3-1024x640-44feb130.jpg",
+      "title": "Quem disse isso?",
+      "description": "Aquele que luta com monstros deve acautelar-se para não tornar-se também um monstro. Quando se olha muito tempo para um abismo, o abismo olha para você.",
       "answer": 2,
       "alternatives": [
-        ".elemento",
-        "*elemento",
-        "#elemento",
-        "%elemento"
+        "Franz Kafka",
+        "Fiódor Dostoiévski",
+        "Friedrich Nietzsche",
+        "Zygmunt Bauman"
       ]
     },
     {
-      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-      "title": "Como fazer um background gradiente com css?",
-      "description": "Faz tempo em haha",
+      "image": "https://i2.wp.com/www.hisour.com/wp-content/uploads/2019/10/Museum-apartment-of-F.-M.-Dostoevsky-Moscow-Russia.jpg?fit=960%2C640&ssl=1&resize=1280%2C720",
+      "title": "Quem disse isso?",
+      "description": "A beleza salvará o mundo.",
       "answer": 0,
       "alternatives": [
-         "background: linear-gradient(#e66465, #9198e5);",
-         "background: gradient(#e66465, #9198e5);"
+        "Fiódor Dostoiévski",
+        "William Shakespeare",
+        "Jean-Jacques Roussea",
+        "Zygmunt Bauman"
+      ]
+    },
+    {
+      "image": "https://www.revistapazes.com/content/uploads/2016/07/a_vida_e_fragil-696x474.jpg",
+      "title": "Quem disse isso?",
+      "description": "Vivemos tempos líquidos. Nada é para durar.",
+      "answer": 3,
+      "alternatives": [
+        "Platão",
+        "Karl Heinrich Marx",
+        "Jean-Jacques Roussea",
+        "Zygmunt Bauman"
+      ]
+    },
+    {
+      "image": "https://static.todamateria.com.br/upload/so/se/so-sei-que-nada-sei-og.jpg",
+      "title": "Quem disse isso?",
+      "description": "Só sei que nada sei.",
+      "answer": 1,
+      "alternatives": [
+        "René Descartes",
+        "Sócrates",
+        "Platão",
+        "Demócrito de Abdera"
+      ]
+    },
+    {
+      "image": "https://static.todamateria.com.br/upload/so/se/so-sei-que-nada-sei-og.jpg",
+      "title": "Quem disse isso?",
+      "description": "Não espere por uma crise para descobrir o que é importante em sua vida.",
+      "answer": 2,
+      "alternatives": [
+        "René Descartes",
+        "Sócrates",
+        "Platão",
+        "Demócrito de Abdera"
+      ]
+    },
+    {
+      "image": "https://www.pordentrodoassuntoiguatemi.com.br/wp-content/uploads/2018/07/felicidade.jpg",
+      "title": "Quem disse isso?",
+      "description": "A melhor maneira de ser feliz é contribuir para a felicidade dos outros.",
+      "answer": 3,
+      "alternatives": [
+        "Franz Kafka",
+        "René Descartes",
+        "Carl Gustav Jung",
+        "Confúcio"
+      ]
+    },
+    {
+      "image": "http://1.bp.blogspot.com/-ma5q2nJxH88/UeYPmoQkF_I/AAAAAAAADzo/lqeJj0K7RNk/s1600/blahnik-elves-and-shoemaker-01_16042657852_jpg_article_gallery_slideshow_v2-578x347.jpg",
+      "title": "Quem disse isso?",
+      "description": "Uns sapatos que ficam bem numa pessoa são pequenos para uma outra; não existe uma receita para a vida que sirva para todos.",
+      "answer": 2,
+      "alternatives": [
+        "Franz Kafka",
+        "René Descartes",
+        "Carl Gustav Jung",
+        "Confúcio"
+      ]
+    },
+    {
+      "image": "https://www.eusemfronteiras.com.br/wp-content/uploads/2018/02/photo-1496416826028-2a71c4c47e75.jpg",
+      "title": "Quem disse isso?",
+      "description": "Quem possui a faculdade de ver a beleza, não envelhece.",
+      "answer": 0,
+      "alternatives": [
+        "Franz Kafka",
+        "Fiódor Dostoiévski",
+        "Friedrich Nietzsche",
+        "Zygmunt Bauman"
       ]
     }
   ],
   "external": [
-    ""
+    "https://aluraquiz-base.alura-challenges.vercel.app/",
+    "https://aluraquiz-css.omariosouto.vercel.app/",
+    "https://lolzinquiz-git-main.bernardooficial.vercel.app/",
+    "https://quiz-justiceleague.levi-magny.vercel.app/",
+    "https://aluraquizpokemon.cesarrobertopg.vercel.app/",
+    "https://quiz-pokemon.dashpunk.vercel.app/",
+    "https://aluraquiz-devsoutinho.omariosouto.vercel.app/",
+    "https://aluraquiz.edlanioj.vercel.app/",
+    "https://imersao-react-nextjs.fallying.vercel.app/",
+    "https://doctor-who-quiz.emanuelpna.vercel.app/",
+    "https://pokequiz-imersao-next.felipeferreiradev.vercel.app/",
+    "https://alura-quiz-avengers.fernanda-kipper.vercel.app/",
+    "https://quiz-games.gabrielwolf-dev.vercel.app/",
+    "https://aluraquiz-base.gustavo-mf.vercel.app/",
+    "https://disgust-quiz.arrivabeni.vercel.app/",
+    "https://flow-quiz.garubieru.vercel.app/",
+    "https://internet-quiz.johnmaroeli.vercel.app/",
+    "https://aluraquiz-base.jojoreoli.vercel.app/",
+    "https://aluraquiz-harrypotter.karinarovani.vercel.app/",
+    "https://bhaskaraquiz.lucas-henrique-lopes-costa.vercel.app/",
+    "https://projeto-alura-quiz.andersonfroes.vercel.app/",
+    "https://alura-quiz-base.abnner13.vercel.app/"
   ],
   "theme": {
     "colors": {
@@ -37,7 +132,7 @@
       "secondaryDarker": "#870000",
       "primaryBg": "#004d40",
       "secondaryBg":"#39796b",
-      "contrastTextPrimary": "#FFFFFF",
+      "contrastTextPrimary": "#ffffff",
       "contrastTextSecondary": "#000000",
       "disabled": "#757575",
       "wrong": "#c62828",

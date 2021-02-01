@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from '../Card';
+import BackArrowLink from '../BackArrowLink';
 
 export default function QuizQuestion(props) {
   const [selectedAlternative, setSelectedAlternative] = React.useState(undefined);
@@ -54,9 +55,10 @@ export default function QuizQuestion(props) {
   return (
     <Card>
       <Card.Header>
-        <h1>
+        <BackArrowLink href="/" />
+        <h2>
           {`Pergunta ${questionIndex + 1} de ${length}`}
-        </h1>
+        </h2>
       </Card.Header>
       <img style={{ width: '100%', height: '200px' }} src={question.image} alt="Placeholder" />
       <Card.Content>

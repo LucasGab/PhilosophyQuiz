@@ -1,10 +1,9 @@
 import { useRouter } from 'next/router';
 import React from 'react';
-import BaseLayout from '../src/components/BaseLayout';
-import QuizContainer from '../src/components/QuizContainer';
-import QuizQuestion from '../src/components/QuizQuestion';
-import Card from '../src/components/Card';
-import db from '../db.json';
+import BaseLayout from '../../components/BaseLayout';
+import QuizContainer from '../../components/QuizContainer';
+import QuizQuestion from '../../components/QuizQuestion';
+import Card from '../../components/Card';
 
 function LoadingCard() {
   return (
@@ -48,12 +47,12 @@ const screenStates = {
   RESULT: 'RESULT',
 };
 
-export default function QuizPage() {
+export default function QuizPage({ externalDb }) {
   const [screenState, setScreenState] = React.useState(screenStates.LOADING);
   const [results, setResults] = React.useState([]);
   const [currentQuestion, setCurrentQuestion] = React.useState(0);
-  const totalQuestions = db.questions.length;
-  const question = db.questions[currentQuestion];
+  const totalQuestions = externalDb.questions.length;
+  const question = externalDb.questions[currentQuestion];
 
   React.useEffect(() => {
     setTimeout(() => {
@@ -71,7 +70,7 @@ export default function QuizPage() {
   };
 
   return (
-    <BaseLayout>
+    <BaseLayout bg={externalDb.bg}>
       <QuizContainer>
         {screenState === screenStates.QUIZ && (
           <QuizQuestion

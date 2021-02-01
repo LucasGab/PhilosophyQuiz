@@ -128,6 +128,7 @@ Card.Button = styled.button`
 Card.Alternative = styled.a`
     display:block;
     text-align: center;
+    color: ${({ theme }) => theme.colors.contrastTextPrimary};
     padding: 12px 0;
     margin: 10px 0;
     cursor: pointer;
@@ -135,6 +136,7 @@ Card.Alternative = styled.a`
     background-color: ${({ theme }) => theme.colors.primary};
     outline: 0;
     transition: .3s;
+    text-decoration:none;
     
     &:hover {
         opacity: .5;
