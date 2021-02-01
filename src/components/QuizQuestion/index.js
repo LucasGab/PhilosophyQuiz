@@ -13,12 +13,14 @@ export default function QuizQuestion(props) {
   const hasSelectedAlternative = !Number.isNaN(Number(selectedAlternative));
 
   const onChangeAlternative = (index) => {
-    setSelectedAlternative(index);
+    if (!questionSubmited) {
+      setSelectedAlternative(index);
+    }
   };
 
   const alternatives = question.alternatives.map((alternative, alternativeIndex) => {
     const alternativeId = `alternative__${alternativeIndex}`;
-    const isSelected = alternativeIndex === selectedAlternative;
+    const isSelected = (alternativeIndex === selectedAlternative);
     const status = isCorrect ? 'SUCCESS' : 'ERROR';
     return (
       <div key={alternativeId}>
@@ -66,12 +68,12 @@ export default function QuizQuestion(props) {
         <p>{question.description}</p>
         <form onSubmit={onSubmit}>
           {alternatives}
-          <Card.Button type="submit" disabled={!hasSelectedAlternative}>
-            Confirmar
+          <Card.Button type="submit" disabled={!hasSelectedAlternative || questionSubmited}>
+            {!questionSubmited && <span>Confirmar</span>}
+            {isCorrect && questionSubmited && <span>Você acertou!</span>}
+            {!isCorrect && questionSubmited && <span>Você errou!</span>}
           </Card.Button>
         </form>
-        {isCorrect && questionSubmited && <p>Você acertou!</p>}
-        {!isCorrect && questionSubmited && <p>Você errou!</p>}
       </Card.Content>
     </Card>
   );

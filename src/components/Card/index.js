@@ -125,15 +125,25 @@ Card.Button = styled.button`
     }
 `;
 
+Card.AlternativeLink = styled.span`
+    cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
+`;
+
+Card.Loading = styled.div`
+    pointer-events:none;
+    transform: translate3d(-15px, 0, 0);
+`;
+
 Card.Alternative = styled.a`
     display:block;
     text-align: center;
     color: ${({ theme }) => theme.colors.contrastTextPrimary};
     padding: 12px 0;
     margin: 10px 0;
-    cursor: pointer;
+    cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
+    pointer-events: ${({ disabled }) => (disabled ? 'none' : 'all')};
     border-radius: ${({ theme }) => theme.borderRadius};
-    background-color: ${({ theme }) => theme.colors.primary};
+    background-color: ${({ theme, disabled }) => (disabled ? theme.colors.disabled : theme.colors.primary)};
     outline: 0;
     transition: .3s;
     text-decoration:none;

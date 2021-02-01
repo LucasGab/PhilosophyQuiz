@@ -1,18 +1,37 @@
 import { useRouter } from 'next/router';
 import React from 'react';
+import Lottie from 'react-lottie';
 import BaseLayout from '../../components/BaseLayout';
 import QuizContainer from '../../components/QuizContainer';
 import QuizQuestion from '../../components/QuizQuestion';
 import Card from '../../components/Card';
+import thinkingAnimation from './thinking.json';
 
 function LoadingCard() {
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: thinkingAnimation,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
+
   return (
     <Card>
       <Card.Header>
         <h1>Carregando...</h1>
       </Card.Header>
       <Card.Content>
-        <p>[Carregando os quizes]</p>
+        <Card.Loading>
+          <Lottie
+            options={defaultOptions}
+            height={200}
+            width={200}
+            isStopped={false}
+            isPaused={false}
+          />
+        </Card.Loading>
       </Card.Content>
     </Card>
   );
@@ -28,6 +47,11 @@ function ResultCard(props) {
     <p key={`result__${index + 1}`}>{`Pergunta #${index + 1}: ${correct ? 'Acertou' : 'Errou'}`}</p>
   ));
 
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    router.push('/');
+  };
+
   return (
     <Card>
       <Card.Header>
@@ -36,6 +60,11 @@ function ResultCard(props) {
       <Card.Content>
         <p>{`${name} você acertou ${totalCorrects} de ${total}: `}</p>
         {individualResults}
+        <form onSubmit={handleFormSubmit}>
+          <Card.Button type="submit">
+            Voltar
+          </Card.Button>
+        </form>
       </Card.Content>
     </Card>
   );
@@ -57,7 +86,7 @@ export default function QuizPage({ externalDb }) {
   React.useEffect(() => {
     setTimeout(() => {
       setScreenState(screenStates.QUIZ);
-    }, 1 * 1000);
+    }, 1 * 2000);
   }, []);
 
   const handleSubmit = (correct) => {

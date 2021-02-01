@@ -35,13 +35,18 @@ export default function Home() {
           hidden: { opacity: 0, scale: 0.5, y: 20 },
         }}
       >
-        <Card.Alternative
-          as={Link}
-          href={`/quiz/${repoName}___${user}`}
-          key={`externalQuiz_${externalQuiz}`}
+        <Card.AlternativeLink
+          disabled={name.length === 0}
         >
-          {`${user}/${repoName}`}
-        </Card.Alternative>
+          <Card.Alternative
+            as={Link}
+            href={`/quiz/${repoName}___${user}?name=${name}`}
+            key={`externalQuiz_${externalQuiz}`}
+            disabled={name.length === 0}
+          >
+            {`${user}/${repoName}`}
+          </Card.Alternative>
+        </Card.AlternativeLink>
       </motion.li>
     );
   });
@@ -123,7 +128,7 @@ export default function Home() {
                     show: {
                       opacity: 1,
                       scale: 1,
-                      transition: { delayChildren: 0.6, staggerChildren: 0.3 },
+                      transition: { delayChildren: 0.6, staggerChildren: 0.2 },
                     },
                     hidden: { opacity: 0, scale: 0.5 },
                   }}
